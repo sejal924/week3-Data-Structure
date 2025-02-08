@@ -1,15 +1,14 @@
-package comparing_datastructures;
-
-import org.example.comparing_datastructures.Array_HashSet_TreeSet;
-import org.junit.jupiter.api.Test;
-import java.util.HashSet;
-import java.util.TreeSet;
-
-public class Array_HashSet_TreeSet_Test {
-
-
-    @Test
-    void test(){
+package org.example.comparing_datastructures;
+import java.util.*;
+public class Array_HashSet_TreeSet {
+    public static int arraySearching(int[] arr,int element){
+        for(int i = 0;i<arr.length;i++){
+            if(arr[i]==element)
+              return i;
+        }
+        return -1;
+    }
+    public static void main(String[] args){
         int[] arr ={1000,100000,1000000};
         for(int i: arr){
             int[] newArr = new int[i];
@@ -23,12 +22,12 @@ public class Array_HashSet_TreeSet_Test {
             int target = i-88;
             double start, end;
             start = System.nanoTime();
-            int a = Array_HashSet_TreeSet.arraySearching(newArr,target);
+            int a = arraySearching(newArr,target);
             end = System.nanoTime();
             System.out.println("Time Taken by Array: " +(end-start)/1000 + "ms");
 
             start = System.nanoTime();
-            boolean ans = hs.contains(target);
+           boolean ans = hs.contains(target);
             end = System.nanoTime();
             System.out.println("Time Taken by HashSet: " +(end-start)/1000 + "ms");
 

@@ -4,6 +4,8 @@ import org.example.searching.Linear_And_Binary_Search;
 import org.junit.jupiter.api.Test;
 
 public class Linear_And_Binary_Search_Test {
+
+
      @Test
     void Test(){
          int[] arr = {1000,10000,1000000};

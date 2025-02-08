@@ -1,13 +1,21 @@
-package string_concatenate;
+package org.example.string_concatenate;
 
-import org.example.string_concatenate.String_Concatenate;
-import org.junit.jupiter.api.Test;
-
-public class String_Concatenate_Test {
-
-
-    @Test
-    void Test(){
+public class String_Concatenate {
+    public static void string(String[] string){
+        String str = " ";
+        for(int i=0;i<string.length;i++){
+            str  += string[i];
+        }
+    }
+    public static void stringBuilder(String[] string){
+         StringBuilder sb = new StringBuilder();
+         sb.append(string);
+    }
+    public static void stringBuffer(String[] string){
+        StringBuffer sb = new StringBuffer();
+        sb.append(string);
+    }
+    public static void main(String[] args){
         int[] str = {1000,10000,1000000};
         for(int s: str){
             String[] newStr = new String[s];
@@ -17,7 +25,7 @@ public class String_Concatenate_Test {
             double start,end;
             start = System.nanoTime();
             if(s != 1000000)
-                String_Concatenate.string(newStr);
+            string(newStr);
             end = System.nanoTime();
             System.out.println("Time Taken by string: " +(end-start)/1000 +"ms");
 
@@ -25,7 +33,7 @@ public class String_Concatenate_Test {
                 newStr[i] = "Hello ";
             }
             start = System.nanoTime();
-              String_Concatenate.stringBuilder(newStr);
+            stringBuilder(newStr);
             end = System.nanoTime();
             System.out.println("Time Taken by stringBuilder: " +(end-start)/1000 +"ms");
 
@@ -33,10 +41,9 @@ public class String_Concatenate_Test {
                 newStr[i] = " World";
             }
             start = System.nanoTime();
-              String_Concatenate.stringBuffer(newStr);
+            stringBuffer(newStr);
             end = System.nanoTime();
             System.out.println("Time Taken by stringBuffer: " +(end-start)/1000 +"ms");
         }
-
     }
 }

@@ -4,6 +4,8 @@ import org.example.sorting.Bubble_Merge_Quick_Sort;
 import org.junit.jupiter.api.Test;
 
 public class Bubble_Merge_Quick_Sort_Test {
+
+
     @Test
     void Test(){
         int[] arr = {1000,10000,1000000};
